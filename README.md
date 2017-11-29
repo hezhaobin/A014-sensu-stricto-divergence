@@ -16,6 +16,18 @@ Estimate the level of synonymous and nonsynonymous divergence between _sensu str
 
 ## Notes
 
+### [28 nov 2017] test PAML
+
+- learned about the concepts used in the codon model, such as dS and S*dS, etc.
+- tested PAML on one alignment (YBR093C)
+    - need to format the alignment file by rewriting the species name
+    - used ALIGN to convert the fasta format to PHYLIP (intercleaved)
+    - wrote a tree file
+    - edited a codonml.ctl
+    - stored everything under `analysis/test_paml` folder
+- based on this one gene, Scer and Spar are approx ~50% synonymous divergence.
+- the next question is how to apply this to a large number of genes and extract the results?
+
 ### [27 nov 2017] start the analysis
 
 - Downloaded the multiple alignment
