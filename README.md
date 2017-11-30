@@ -16,7 +16,17 @@ Estimate the level of synonymous and nonsynonymous divergence between _sensu str
 
 ## Notes
 
-### [28 nov 2017] test PAML
+### [30 nov 2017] apply to many alignment
+
+#### Parse the alignment
+
+_Goal_
+
+1. process sequence names to include only 4 letter species abbreviation
+1. convert to PHYLIP intercleaved format
+1. rename to make it simpler to call in batch mode
+
+### [29 nov 2017] test PAML
 
 - learned about the concepts used in the codon model, such as dS and S*dS, etc.
 - tested PAML on one alignment (YBR093C)

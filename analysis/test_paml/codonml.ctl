@@ -4,11 +4,11 @@
 
         noisy = 9
       verbose = 1
-      runmode = 0
+      runmode = -2
 
 
       seqtype = 1
-    CodonFreq = 0
+    CodonFreq = 2
 
         ndata = 1
         clock = 0
