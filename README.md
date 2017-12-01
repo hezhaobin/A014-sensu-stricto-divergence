@@ -16,7 +16,12 @@ Estimate the level of synonymous and nonsynonymous divergence between _sensu str
 
 ## Notes
 
-### [30 nov 2017] apply to many alignment
+### [1 dec 2017] apply to many alignment
+
+- Followed [biopython tutorial](https://github.com/peterjc/biopython_workshop/tree/master/reading_writing_alignments) to learn how to use python to read and convert alignment
+    - it turned out that the AlignIO module can easily read in an alignment file and write it in PHYLIP format. that's exactly what I need.
+    - I can also use split function to modify the sequence name. perfect.
+    - also remember to slice the last three columns (stop codon) from the alignment
 
 #### Parse the alignment
 
