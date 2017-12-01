@@ -23,6 +23,11 @@ Estimate the level of synonymous and nonsynonymous divergence between _sensu str
     - I can also use split function to modify the sequence name. perfect.
     - also remember to slice the last three columns (stop codon) from the alignment
 
+- Got the code working for 
+    1) get the file names for all `*.codon.mfa` in the data directory
+    1) read in each file, slice out the last three nucleotides (stop codon) and edit the sequence name to retain only the species names
+    1) tested PAML module in biopython, works great
+
 #### Parse the alignment
 
 _Goal_
