@@ -19,4 +19,4 @@ aln = aln[:, 0:L-3] # to remove the last three nucleotides (stop codon)
 for record in aln:
     record.id = record.id.split("_")[0]
 
-AlignIO.write(aln, "test.phy", "phylip-relaxed")
+AlignIO.write(aln, "test.phy", "phylip-sequential")

@@ -1,7 +1,3 @@
-      seqfile = YBR093C.codon.phy
-     treefile = tree
-      outfile = mlc
-
         noisy = 9
       verbose = 1
       runmode = -2

@@ -41,7 +41,7 @@ Scer                            ... ... ... ..G G.G ... ... ... ..T ... ... ... 
     1    1    1    1    1    1    2    1    1    1    1    2    1    1   10
     1    1    1    1    1    1    1    1
 
-CODONML (in paml version 4.8a, August 2014)  YBR093C.codon.phy
+CODONML (in paml version 4.9e, April 2017)  YBR093C.codon.phy
 Model: One dN/dS ratio for branches, 
 Codon frequency model: F3x4
 ns =   5  ls = 467
@@ -209,7 +209,7 @@ t= 0.8139  S=   344.1  N=  1056.9  dN/dS=  0.1058  dN = 0.0882  dS = 0.8336
 
 5 (Scer) ... 1 (Skud)
 lnL =-2330.965552
-  0.62180  5.02488  0.04597
+  0.62180  5.02485  0.04597
 
 t= 0.6218  S=   419.7  N=   981.3  dN/dS=  0.0460  dN = 0.0287  dS = 0.6247
 

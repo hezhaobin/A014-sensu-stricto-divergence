@@ -16,6 +16,20 @@ Estimate the level of synonymous and nonsynonymous divergence between _sensu str
 
 ## Notes
 
+### [2 dec 2017] troubleshoot paml in biopython
+
+- Problem
+    paml wouldn't run properly, with various errors related to the file path
+
+- Solution
+    
+    1. I found the Biopython wiki for [PAML](http://biopython.org/wiki/PAML) misleading. In particular, the "working_dir" option is designed to shorten the path of the files as input to paml, e.g. alignment, tree and control. After debugging the code (biopython's), I found that the wrapper function "codeml.py" actually expects absolute paths for those files.
+    1. The file format conversion that I got working yesterday produces the "phylip-intercleaved" format. This should work with PAML except that PAML expects a letter "I" on the first line for this format, which the Biopython function left out. I changed the output format to "phylip-sequential" and it worked.
+
+- Notes
+    In general, I've found working with Python and Biopython rather enjoyable, due to the ease of reading python code and the fact that the functions for biopython are quite transparent, which means I can debug them without much difficulty.
+
+
 ### [1 dec 2017] apply to many alignment
 
 - Followed [biopython tutorial](https://github.com/peterjc/biopython_workshop/tree/master/reading_writing_alignments) to learn how to use python to read and convert alignment
