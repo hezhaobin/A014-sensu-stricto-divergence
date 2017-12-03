@@ -18,16 +18,21 @@ def myPAML( f, format="fasta" ):
     Returns:
         parsed output from PAML
     """
-    aln = AlignIO.read(f, format)
+    try: 
+        aln = AlignIO.read(f, format)
+    except ValueError:
+        LOG.write( f.split("_")[1] + " doesn't have equal sequence length.\n" )
+        return;
+
     L = aln.get_alignment_length()
     """ 
     to remove the last three nucleotides (stop codon)
-    changed to remove the last 6 because some sequences
+    changed to remove the last 18 because some sequences
     have misaligned stop codons that appear in the second
     to last codon position
     """
 
-    aln = aln[:, 0:L-6] 
+    aln = aln[:, 0:L-18] 
     
     # edit the sequence name to retain only the species name part
     for record in aln:
@@ -51,7 +56,8 @@ def myPAML( f, format="fasta" ):
 
     
 # open file for output
-OUT = open("../output/2017-12-01-Scer-Spar.txt", "w")
+OUT = open("../output/2017-12-01-Scer-Spar-5.txt", "w")
+LOG = open("./run-paml-log-5.txt", "w")
 
 # list all files
 all_files = glob("../data/alignment/coding/*.codon.mfa")
@@ -59,15 +65,23 @@ print( "There are %i files" % len(all_files) )
 
 i = 0 # counter
 
-for IN in all_files:
+for IN in all_files[3155:]:
     # get gene name
     gene = IN.split("_")[1]
     # run PAML
     result = myPAML(IN, "fasta")
-    dist = result['pairwise']['Scer']['Spar']
-    value = [dist[x] for x in ['dN','dS','omega']]
-    OUT.write( "\t".join([gene]+map(str, value)) + "\n" )
+    # deal with errors due to unequal sequence length
+    if result == None:
+        continue
+    # deal with cases where PAML run is successful but output is null
+    try: 
+        dist = result['pairwise']['Scer']['Spar']
+        value = [dist[x] for x in ['dN','dS','omega']]
+        OUT.write( "\t".join([gene]+map(str, value)) + "\n" )
+    except KeyError:
+        LOG.write( gene + " didn't yield useful results.\n" )
+
     # progress report
     i = i + 1
-    if i % 100 == 0:
-        print( i )
+    if i % 5 == 0:
+        print( str(i) + ", " )

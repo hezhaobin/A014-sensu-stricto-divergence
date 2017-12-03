@@ -1,0 +1,21 @@
+---
+title: "Scer-Spar divergence"
+author: "Bin He"
+date: "December 2, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r required_libraries}
+require(data.table)
+require(vioplot)
+```
+
+```{r analysis, echo=FALSE}
+dat <- fread("../output/2017-12-01-Scer-Spar.txt", col.names = c("Genes", "dN", "dS", "omega"))
+sapply(dat[,.(dN, dS, omega)], summary)
+boxplot(dat[,2:4], ylim = c(0,1), main = "ML estimates of dS, dN and dN/dS\n between S. cerevisiae and S. paradoxus")
+```

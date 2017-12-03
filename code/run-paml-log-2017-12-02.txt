@@ -1,0 +1,18 @@
+50, 100, 150, 200, YFR034W-A error50, 100, YLR038C doesn't have equal sequence length.
+YJR151C didn't yield useful results.
+YBR136W didn't yield useful results.
+YIL120W didn't yield useful results.
+YOR210W doesn't have equal sequence length.
+YHR141C doesn't have equal sequence length.
+YNL024C-A doesn't have equal sequence length.
+YMR317W didn't yield useful results.
+YKL032C didn't yield useful results.
+YJL166W doesn't have equal sequence length.
+YML009C doesn't have equal sequence length.
+YEL017C-A doesn't have equal sequence length.
+YEL020W-A doesn't have equal sequence length.
+YDR256C didn't yield useful results.
+YHR005C-A doesn't have equal sequence length.
+YLR426W didn't yield useful results.
+NOSGD doesn't have equal sequence length.
+YDR276C doesn't have equal sequence length.

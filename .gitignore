@@ -1,2 +1,4 @@
 # unzipped alignment files
 data/alignment/coding/
+# scratch space for PAML runs
+code/scratch/
